@@ -1,0 +1,17 @@
+<h1>You are playing {{ playerPiece }}'s </h1>
+
+<button mat-flat-button color="accent" (click)="reset()">New Game</button>
+
+<h1 *ngIf="winner">
+  {{ winner }} wins!
+</h1>
+
+
+<main>
+  <app-cell
+    *ngFor="let val of cells; let i = index"
+    [value]="val"
+    (click)="playerMove(i)">
+
+  </app-cell>
+</main>
